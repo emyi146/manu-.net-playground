@@ -91,6 +91,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging", "Logging", "{D023
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.MemoryConsiderations", "Logging.MemoryConsiderations\Logging.MemoryConsiderations.csproj", "{CCD6CC3A-7EAE-4D68-97DD-6DE9CF14A5EB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cancellation Token", "Cancellation Token", "{6D357F62-C55B-4A9A-B93F-E99B5AE922FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancellationTokenExample", "CancellationTokenExample\CancellationTokenExample.csproj", "{0E427827-A8DC-4AE8-B30B-7074F86641C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -225,6 +229,10 @@ Global
 		{CCD6CC3A-7EAE-4D68-97DD-6DE9CF14A5EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCD6CC3A-7EAE-4D68-97DD-6DE9CF14A5EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCD6CC3A-7EAE-4D68-97DD-6DE9CF14A5EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E427827-A8DC-4AE8-B30B-7074F86641C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E427827-A8DC-4AE8-B30B-7074F86641C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E427827-A8DC-4AE8-B30B-7074F86641C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E427827-A8DC-4AE8-B30B-7074F86641C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -261,6 +269,7 @@ Global
 		{C9063D2E-46A6-4531-9173-1B49F0884BC3} = {3BD3A6FD-5E2D-498A-B537-71B25B5B9E08}
 		{83ECDFBA-8947-4C18-A6E7-21C455E1F5CB} = {3BD3A6FD-5E2D-498A-B537-71B25B5B9E08}
 		{CCD6CC3A-7EAE-4D68-97DD-6DE9CF14A5EB} = {D023C0EC-EBC4-4D6B-94F7-D1409FA25EE7}
+		{0E427827-A8DC-4AE8-B30B-7074F86641C2} = {6D357F62-C55B-4A9A-B93F-E99B5AE922FB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FB4AFD9D-1F75-40AE-B3A3-EB3F4398B35D}
