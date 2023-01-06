@@ -1,0 +1,15 @@
+﻿ASP.NET Core authorization tutorial with asp.net core c# policy authorization example. 
+How to use claims to facilitate authorization.
+
+Run the API and test:
+
+GET /europe/login    => to acquire a login cookie for europe
+GET /america/login   => to acquire a login cookie for america
+ 
+GET /europe/spain			=> 200 if european passport/cookie
+     						   401 if no cookie
+    						   403 if no valid claims in cookie
+ 						   
+GET /america/usa  			=> 200 if american passport/cookie
+						       401 if no cookie
+						       403 if no valid claims in cookie
