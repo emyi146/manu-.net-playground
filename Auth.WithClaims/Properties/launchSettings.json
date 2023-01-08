@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "Auth.WithClaims": {
+    "Auth.CookiesAndOAuth2": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
