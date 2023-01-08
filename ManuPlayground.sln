@@ -99,7 +99,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging.AvoidStringInterpol
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Auth", "Auth", "{0A5C782D-C1E4-46B5-B646-F3E0E211DC57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth.WithClaims", "Auth.WithClaims\Auth.WithClaims.csproj", "{6C51E7E0-E6E6-421C-B299-2D267BC0C37A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.CookiesAndOAuth2", "Auth.WithClaims\Auth.CookiesAndOAuth2.csproj", "{6C51E7E0-E6E6-421C-B299-2D267BC0C37A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

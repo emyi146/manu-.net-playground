@@ -5,28 +5,29 @@ using System.Security.Claims;
 
 namespace Auth.WithClaims.Controllers;
 
-[Authorize(Policy = "eu passport")]
 [ApiController]
 [Route("[controller]")]
 public class EuropeController : ControllerBase
 {
     [AllowAnonymous]
-    [HttpGet("login")]
-    public async Task Login()
+    [HttpGet("locals/login")]
+    public async Task LoginLocals()
     {
         var claims = new List<Claim>
         {
-            new("usr", "john"),
+            new("usr", "Iñigo Montoya"),
             new("passport_type", "european")
         };
-        var identity = new ClaimsIdentity(claims, AuthSchemes.MyCookieAuthSchema);
+        var identity = new ClaimsIdentity(claims, AuthSchemes.LocalCookieAuthSchema);
         var user = new ClaimsPrincipal(identity);
-        await HttpContext.SignInAsync(AuthSchemes.MyCookieAuthSchema, user);
+        await HttpContext.SignInAsync(AuthSchemes.LocalCookieAuthSchema, user);
+        HttpContext.Response.Redirect("/europe/locals");
     }
 
-    [HttpGet("spain")]
-    public string Spain()
+    [Authorize(Policy = AuthPolicies.EuropeanLocalPassportPolicy)]
+    [HttpGet("locals")]
+    public string Locals()
     {
-        return "Welcome to Spain";
+        return $"Dear European citizen, {User.FindFirstValue("usr")}, welcome back!";
     }
 }
