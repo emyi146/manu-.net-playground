@@ -101,6 +101,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Auth", "Auth", "{0A5C782D-C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.CookiesAndOAuth2", "Auth.WithClaims\Auth.CookiesAndOAuth2.csproj", "{6C51E7E0-E6E6-421C-B299-2D267BC0C37A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HttpClient", "HttpClient", "{121B7ED5-8351-4FB6-9C88-C9CA4A2336D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpClient.HowToUse", "HttpClient.HowToUse\HttpClient.HowToUse.csproj", "{CCA0AA0E-C474-4790-891A-F74C2F36AC70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -247,6 +251,10 @@ Global
 		{6C51E7E0-E6E6-421C-B299-2D267BC0C37A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C51E7E0-E6E6-421C-B299-2D267BC0C37A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C51E7E0-E6E6-421C-B299-2D267BC0C37A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCA0AA0E-C474-4790-891A-F74C2F36AC70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCA0AA0E-C474-4790-891A-F74C2F36AC70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCA0AA0E-C474-4790-891A-F74C2F36AC70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCA0AA0E-C474-4790-891A-F74C2F36AC70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -286,6 +294,7 @@ Global
 		{0E427827-A8DC-4AE8-B30B-7074F86641C2} = {6D357F62-C55B-4A9A-B93F-E99B5AE922FB}
 		{D8288BE6-9A0B-44DA-94DF-09E0E15B0DCD} = {D023C0EC-EBC4-4D6B-94F7-D1409FA25EE7}
 		{6C51E7E0-E6E6-421C-B299-2D267BC0C37A} = {0A5C782D-C1E4-46B5-B646-F3E0E211DC57}
+		{CCA0AA0E-C474-4790-891A-F74C2F36AC70} = {121B7ED5-8351-4FB6-9C88-C9CA4A2336D9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FB4AFD9D-1F75-40AE-B3A3-EB3F4398B35D}
