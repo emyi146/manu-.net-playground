@@ -25,7 +25,6 @@ builder.Services.AddVersionedApiExplorer(options =>
     options.GroupNameFormat = "'v'VVV";
     options.SubstituteApiVersionInUrl = true;
 });
-
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.ConfigureOptions<ConfigureSwaggerOptions>();
 builder.Services.AddSwaggerGen();
