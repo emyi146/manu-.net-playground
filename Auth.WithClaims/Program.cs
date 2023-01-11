@@ -18,7 +18,7 @@ builder.Services.AddAuthentication(AuthSchemes.LocalCookieAuthSchema)
         // Mocking Oauth with https://www.mocklab.io/docs/oauth2-mock/
 
         // The SignIn Scheme, different from the OAuth scheme. It represents the cookie where the token is stored.
-        opts.SignInScheme = "president-cookie";
+        opts.SignInScheme = AuthSchemes.PresidentCookieAuthSchema;
 
         // Oauth parameters provided by the provider (in this case 
         opts.AuthorizationEndpoint = "https://oauth.mocklab.io/oauth/authorize";
