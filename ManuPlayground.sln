@@ -115,7 +115,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api Versioning", "Api Versi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiVersioning", "ApiVersioning\ApiVersioning.csproj", "{4A038621-CAAA-475A-A977-F7AAC7C9E1E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiVersioning.MinimalApis", "ApiVersioning.MinimalApis\ApiVersioning.MinimalApis.csproj", "{3C7BAF00-9FBA-4136-8359-D104A2BA20EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiVersioning.MinimalApis", "ApiVersioning.MinimalApis\ApiVersioning.MinimalApis.csproj", "{3C7BAF00-9FBA-4136-8359-D104A2BA20EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DesignPatterns", "DesignPatterns", "{CF6BE13F-F4C0-49B7-958E-7A122E018882}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Creational.Factory_AbstractFactory_FactoryMethod", "DesignPatterns.Creational.Factory_AbstractFactory_FactoryMethod\DesignPatterns.Creational.Factory_AbstractFactory_FactoryMethod.csproj", "{20DF338B-9D27-411D-9D8F-F07E1B53B6AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Creational.BuilderPattern", "DesignPatterns.Creational.BuilderPattern\DesignPatterns.Creational.BuilderPattern.csproj", "{52932DB3-7483-47E5-96EB-E4650673A927}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Common", "DesignPatterns.Common\DesignPatterns.Common.csproj", "{9FD188AC-DCD5-420F-B60B-015050E653D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -283,6 +294,18 @@ Global
 		{3C7BAF00-9FBA-4136-8359-D104A2BA20EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C7BAF00-9FBA-4136-8359-D104A2BA20EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C7BAF00-9FBA-4136-8359-D104A2BA20EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20DF338B-9D27-411D-9D8F-F07E1B53B6AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20DF338B-9D27-411D-9D8F-F07E1B53B6AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20DF338B-9D27-411D-9D8F-F07E1B53B6AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20DF338B-9D27-411D-9D8F-F07E1B53B6AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52932DB3-7483-47E5-96EB-E4650673A927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52932DB3-7483-47E5-96EB-E4650673A927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52932DB3-7483-47E5-96EB-E4650673A927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52932DB3-7483-47E5-96EB-E4650673A927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FD188AC-DCD5-420F-B60B-015050E653D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FD188AC-DCD5-420F-B60B-015050E653D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FD188AC-DCD5-420F-B60B-015050E653D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FD188AC-DCD5-420F-B60B-015050E653D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -327,6 +350,9 @@ Global
 		{0714EA9D-C383-4030-8105-580ED3808433} = {FC0C9E78-C9CB-4532-89BF-7BB8525C036B}
 		{4A038621-CAAA-475A-A977-F7AAC7C9E1E2} = {50F44240-0306-4984-9C5E-27CDC6728E1B}
 		{3C7BAF00-9FBA-4136-8359-D104A2BA20EF} = {50F44240-0306-4984-9C5E-27CDC6728E1B}
+		{20DF338B-9D27-411D-9D8F-F07E1B53B6AA} = {CF6BE13F-F4C0-49B7-958E-7A122E018882}
+		{52932DB3-7483-47E5-96EB-E4650673A927} = {CF6BE13F-F4C0-49B7-958E-7A122E018882}
+		{9FD188AC-DCD5-420F-B60B-015050E653D6} = {CF6BE13F-F4C0-49B7-958E-7A122E018882}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FB4AFD9D-1F75-40AE-B3A3-EB3F4398B35D}
