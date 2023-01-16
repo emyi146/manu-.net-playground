@@ -1,4 +1,6 @@
-﻿namespace DesignPatterns.Creational.Factory_AbstractFactory_FactoryMethod.FactoryPattern;
+﻿using DesignPatterns.Common;
+
+namespace DesignPatterns.Creational.Factory_AbstractFactory_FactoryMethod.FactoryPattern;
 class FactoryMethodPattern
 {
 

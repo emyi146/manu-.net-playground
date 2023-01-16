@@ -62,5 +62,5 @@ public class DictBuilder : IKeyValueCollectionBuilder
         return this;
     }
 
-    public string Build() => _stringBuilder.ToString();
+    public Dictionary<string, string> Build() => _dictionary;
 }
