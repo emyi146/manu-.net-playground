@@ -15,7 +15,7 @@ using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
-List<string> blackList = Enumerable.Empty<string>().ToList();
+List<string> blackList = new();
 
 
 builder.Services.AddEndpointsApiExplorer();
