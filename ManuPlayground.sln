@@ -132,15 +132,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeBasedGuidGenerator", "T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests.MockVsStubVsFake", "UnitTests.MockVsStubVsFake\UnitTests.MockVsStubVsFake.csproj", "{ED512598-51DD-466F-B927-05448D0953FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth.CookiesInvalidation", "Auth.CookiesInvalidation\Auth.CookiesInvalidation.csproj", "{512C5EF8-6D8D-4CF0-9289-49127CA91030}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.CookiesInvalidation", "Auth.CookiesInvalidation\Auth.CookiesInvalidation.csproj", "{512C5EF8-6D8D-4CF0-9289-49127CA91030}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth.TokenRevocation", "Auth.TokenRevocation\Auth.TokenRevocation.csproj", "{DFD83F36-099E-474A-9D24-195DE1C5BCE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.TokenRevocation", "Auth.TokenRevocation\Auth.TokenRevocation.csproj", "{DFD83F36-099E-474A-9D24-195DE1C5BCE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Creational.Prototype", "DesignPatterns.Creational.Prototype\DesignPatterns.Creational.Prototype.csproj", "{F48F5B0D-10E3-4425-86D9-BB0DC02E3AFB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns.Creational.Prototype", "DesignPatterns.Creational.Prototype\DesignPatterns.Creational.Prototype.csproj", "{F48F5B0D-10E3-4425-86D9-BB0DC02E3AFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Creational.Singleton", "DesignPatterns.Creational.Singleton\DesignPatterns.Creational.Singleton.csproj", "{884A9553-A5C8-4304-8B2A-02E1ACB9CC25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns.Creational.Singleton", "DesignPatterns.Creational.Singleton\DesignPatterns.Creational.Singleton.csproj", "{884A9553-A5C8-4304-8B2A-02E1ACB9CC25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignerPatterns.Structural.AdapterOrWrapper", "DesignerPatterns.Structural.AdapterOrWrapper\DesignerPatterns.Structural.AdapterOrWrapper.csproj", "{F350AAC1-5B1F-4F02-B57B-E14B4BF1AC19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignerPatterns.Structural.AdapterOrWrapper", "DesignerPatterns.Structural.AdapterOrWrapper\DesignerPatterns.Structural.AdapterOrWrapper.csproj", "{F350AAC1-5B1F-4F02-B57B-E14B4BF1AC19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Benchmarks", "Benchmarks", "{B79610BD-50B9-4848-88F0-23C056E6B015}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeasureMethodPerformance.MethodTimer", "MeasureMethodPerformance.MethodTimer\MeasureMethodPerformance.MethodTimer.csproj", "{6CA225D6-03FD-4516-9FA6-ADCE804310C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -344,6 +348,10 @@ Global
 		{F350AAC1-5B1F-4F02-B57B-E14B4BF1AC19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F350AAC1-5B1F-4F02-B57B-E14B4BF1AC19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F350AAC1-5B1F-4F02-B57B-E14B4BF1AC19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CA225D6-03FD-4516-9FA6-ADCE804310C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CA225D6-03FD-4516-9FA6-ADCE804310C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CA225D6-03FD-4516-9FA6-ADCE804310C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CA225D6-03FD-4516-9FA6-ADCE804310C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -397,6 +405,7 @@ Global
 		{F48F5B0D-10E3-4425-86D9-BB0DC02E3AFB} = {CF6BE13F-F4C0-49B7-958E-7A122E018882}
 		{884A9553-A5C8-4304-8B2A-02E1ACB9CC25} = {CF6BE13F-F4C0-49B7-958E-7A122E018882}
 		{F350AAC1-5B1F-4F02-B57B-E14B4BF1AC19} = {CF6BE13F-F4C0-49B7-958E-7A122E018882}
+		{6CA225D6-03FD-4516-9FA6-ADCE804310C7} = {B79610BD-50B9-4848-88F0-23C056E6B015}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FB4AFD9D-1F75-40AE-B3A3-EB3F4398B35D}
