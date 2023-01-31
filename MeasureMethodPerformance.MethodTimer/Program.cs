@@ -10,19 +10,20 @@ Console.WriteLine("Bye, World!");
 
 public static class SomeClass
 {
-    [Time]
-    public static async Task SomeLongMethod()
+    [Time("Process some long duration task {totalOperations}")]
+    public static async Task SomeLongMethod(int totalOperations = 1)
     {
-        await Task.Delay(Random.Shared.Next(1000, 3000));
+        await Task.Delay(1000 * totalOperations);
     }
 }
 
 internal static class MethodTimeLogger
 {
-    public static void Log(MethodBase methodBase, long totalMilliseconds, string message)
+    public static void Log(MethodBase methodBase, long milliseconds, string message)
     {
         // Use logger here. This interceptor works automatically with the name convention MethodTimeLogger
-        Console.WriteLine($"{methodBase.Name} took {totalMilliseconds} ms");
+        Console.WriteLine("{0}.{1} - {2} in {3}",
+            methodBase.DeclaringType!.Name, methodBase.Name, message, milliseconds);
     }
 
 }
