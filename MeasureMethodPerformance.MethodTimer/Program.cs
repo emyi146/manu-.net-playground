@@ -7,6 +7,7 @@ using System.Reflection;
 Console.WriteLine("Hello, World!");
 await SomeClass.SomeLongMethod();
 Console.WriteLine("Bye, World!");
+Console.ReadLine();
 
 public static class SomeClass
 {
