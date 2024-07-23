@@ -1,4 +1,6 @@
-﻿using System.IdentityModel.Tokens.Jwt;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Dynamic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
@@ -12,89 +14,77 @@ using Microsoft.IdentityModel.Tokens;
  * 
  * This code is a simulation of a process where a user submits an initial payload for validation.
  * If the payload is invalid, the user receives a recommended payload with a validation token.
- * The user must resubmit the payload with the validation token to save the data without revalidating it with a  *third-party API.
+ * The user must resubmit the payload with the validation token to save the data without revalidating it with a third-party API.
  * It uses a JWT token to validate the recommended payload and the token submitted by the user.
  * The JWT token is hashed and concatenated with the expiration date to create a validation hash.
  * The validation hash is compared with the token submitted by the user to validate the token.
  */
 
-var tokenService = new TokenService("2j55AFBjqr7zKVyElDXqD5YoW");
+var tokenService = new TokenService("Yp2s5v8y/B?E(H+MbQeThWmZq4t6w9z$");
 
 // Simulate user submitting an initial payload
-var initialPayload = new ValidatedAddressDto
+var initialPayload = new PayloadDto
 {
-    AddressOne = "123 Main St",
-    City = "Anytown2",
-    ZipCode = "12345",
-    CountryIsoCode = "US"
+    City = "Niu York",
+    Country = "US"
 };
 
-// Call third-party API for validation (simulated here)
-var validationResult = ValidateWithThirdPartyApi(initialPayload);
+// Step 1: Try to store the invalid payload
+var validationResult = TryStorePayload(initialPayload);
+Console.WriteLine($"1st attempt, storing an invalid payload: {validationResult}");          // Invalid
 
-if (validationResult.IsValid)
+// Step 2: Try to store with the recommended payload
+validationResult = TryStorePayload(validationResult.RecommendedPayload);
+Console.WriteLine($"2nd attempt, storing the recommended payload: {validationResult}");     // Valid
+
+// Step 3: Try to manipulated payload
+var manipulatedPayload = validationResult.RecommendedPayload with { City = "Another city" };
+validationResult = TryStorePayload(manipulatedPayload);     // Invalid
+Console.WriteLine($"3rd attempt, storing a manipulated payload: {validationResult}");        // Valid
+
+// Step 4: Try to store an expired token
+var expiredToken = tokenService.GenerateToken(validationResult.RecommendedPayload, DateTime.UtcNow.AddSeconds(-1));
+validationResult = TryStorePayload(validationResult.RecommendedPayload with { ValidationToken = expiredToken });
+Console.WriteLine($"4th attempt, storing an expired token: {validationResult}");            // Valid (because fallback to revalidate)
+
+
+ValidationResult TryStorePayload(PayloadDto payload)
 {
-    // Save the data
-    SaveData(initialPayload);
-    Console.WriteLine("Initial payload saved.");
-}
-else
-{
-    var token = tokenService.GenerateToken(
-        validationResult.RecommendedPayload, DateTime.UtcNow.AddSeconds(5));
-    var payloadWithToken = validationResult.RecommendedPayload with { ValidationToken = token };
-
-    // RETURN THIS TO USER
-
-    // NOW WE RECEIVE THE payloadWithToken FROM THE USER
-
-    var payloadWithoutToken = payloadWithToken with { ValidationToken = null };
-    // Validate the token
-    if (tokenService.ValidateToken(payloadWithoutToken, payloadWithToken.ValidationToken))
+    var token = payload.ValidationToken;
+    if (token is null)
     {
-        // Save the data without third-party API validation
-        SaveData(payloadWithoutToken);
-        Console.WriteLine("Resubmitted payload saved.");
-    }
-    else
-    {
-        Console.WriteLine("Invalid token or payload does not match the recommended payload.");
-    }
-}
-
-static ValidationResult ValidateWithThirdPartyApi(ValidatedAddressDto payload)
-{
-    // Simulate third-party API validation
-    var isValid = payload.City == "Anytown" && payload.ZipCode == "12345";
-
-    if (isValid)
-    {
-        return new ValidationResult { IsValid = true };
-    }
-    else
-    {
-        var recommendedPayload = new ValidatedAddressDto
+        var validatedPayload = GetValidatedAddressFromThirdPartyApi(payload);
+        token = tokenService.GenerateToken(validatedPayload, DateTime.UtcNow.AddSeconds(15));
+        return new ValidationResult
         {
-            AddressOne = payload.AddressOne,
-            AddressTwo = payload.AddressTwo,
-            City = "Anytown",
-            ZipCode = "12345",
-            CountryIsoCode = "US",
-            CountryDivisionIsoCode = payload.CountryDivisionIsoCode
+            IsValid = validatedPayload == payload,
+            RecommendedPayload = validatedPayload with { ValidationToken = token }
         };
-        return new ValidationResult { IsValid = false, RecommendedPayload = recommendedPayload };
     }
+
+    var payloadWithoutToken = payload with { ValidationToken = null };
+
+    bool isValid = tokenService.ValidateToken(payloadWithoutToken, token);
+    if (!isValid)
+        return TryStorePayload(payloadWithoutToken);
+
+    return new ValidationResult
+    {
+        IsValid = true,
+        RecommendedPayload = payload
+    };
 }
 
-static void SaveData(ValidatedAddressDto payload)
+
+static PayloadDto GetValidatedAddressFromThirdPartyApi(PayloadDto payload)
 {
-    // Simulate saving data
-    Console.WriteLine("Data saved:");
-    Console.WriteLine(JsonSerializer.Serialize(payload));
+    // Simulate calling a third-party API
+    return new PayloadDto
+    {
+        City = "New York",
+        Country = "US",
+    };
 }
-
-
-
 
 public class TokenService
 {
@@ -159,29 +149,15 @@ public class TokenService
 
 }
 
-public interface IPayloadWithValidationToken
+public record PayloadDto
 {
-    string ValidationToken { get; }
-}
-
-public record ValidatedAddressDto
-{
-    public string AddressOne { get; init; }
-    public string? AddressTwo { get; init; }
     public string City { get; init; }
-    public string ZipCode { get; init; }
-    public string CountryIsoCode { get; init; }
-    public string? CountryDivisionIsoCode { get; init; }
+    public string Country { get; init; }
     public string? ValidationToken { get; init; } // New property for the validation token
-
 }
 
-public class ValidationResult
+public record ValidationResult
 {
     public bool IsValid { get; set; }
-    public ValidatedAddressDto? RecommendedPayload { get; set; }
+    public PayloadDto? RecommendedPayload { get; set; }
 }
-
-
-
-
