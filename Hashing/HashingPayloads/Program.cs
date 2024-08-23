@@ -113,14 +113,9 @@ public class TokenService
         var jwtToken = new JwtSecurityTokenHandler().WriteToken(token);
 
         // Hash the JWT
-        using (var sha256 = SHA256.Create())
-        {
-            var hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(jwtToken));
-            var hashedToken = Convert.ToBase64String(hashBytes);
-            var expirationDateString = expirationTime.ToString("o"); // ISO 8601 format
-            return $"{hashedToken}|{expirationDateString}";
-
-        }
+        var hashedToken = Convert.ToBase64String(SHA256.HashData(Encoding.UTF8.GetBytes(jwtToken)));
+        var expirationDateString = expirationTime.ToString("o"); // ISO 8601 format
+        return $"{hashedToken}|{expirationDateString}";
     }
 
 
